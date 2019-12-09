@@ -1,5 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    <!-- For testing Diet Plan web service-->
+    var obj = new Blood_Pressure_Tracker.DietPlanServiceReference.DietPlanClient();
 }
 
 <div class="jumbotron">
@@ -29,3 +31,13 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<!-- For testing Diet Plan web service-->
+<div>
+    <h2>Your blood pressure is @obj.GetBloodPressureType(120, 80)</h2>
+    @foreach (var item in obj.GetPreferDietPlan(120, 80))
+    {
+        <p>@item.Key<br />@item.Value</p>
+    }
+</div>
+<!-------------------------------------->
