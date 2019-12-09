@@ -54,15 +54,15 @@ namespace Blood_Pressure_Tracker
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "480790822555727",
+               appSecret: "1021a6d6e7ec3a9986f3ba2cac208ec5");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "578656700402-5pjcp2aq0fg25t9kt3ij3ag3ft95fl69.apps.googleusercontent.com",
+                ClientSecret = "pPh0ndhHZQEkPzdbpKtHIxFL"
+            });
         }
     }
 }
