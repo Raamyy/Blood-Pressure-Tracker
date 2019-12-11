@@ -3,13 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using Blood_Pressure_Tracker.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Blood_Pressure_Tracker.Controllers
 {
     public class HomeController : Controller
     {
+        Database database;
+
+        public HomeController()
+        {
+            database = new Database();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            database.Dispose();
+            base.Dispose(disposing);
+        }
+
         public ActionResult Index()
         {
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("Index", "Dashboard", new {email = User.Identity.Name});
             return View();
         }
 

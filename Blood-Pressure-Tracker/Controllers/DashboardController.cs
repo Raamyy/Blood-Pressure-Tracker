@@ -23,8 +23,9 @@ namespace Blood_Pressure_Tracker.Controllers
         }
 
         // GET: Dashboard
-        public ActionResult Index(ApplicationUser user)
+        public ActionResult Index(string email)
         {
+            ApplicationUser user = database.Users.SingleOrDefault(m => m.Email == email);
             return View(user);
         }
 
@@ -47,7 +48,7 @@ namespace Blood_Pressure_Tracker.Controllers
             database.PressureMeasures.Add(model.Measure);
             activeUser.PressureMeasures.Add(model.Measure);
             database.SaveChanges();
-            return RedirectToAction("Index", "Dashboard", model.User);
+            return RedirectToAction("Index", "Dashboard", new { email = model.User.Email});
         }
     }
 }

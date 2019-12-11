@@ -82,8 +82,7 @@ namespace Blood_Pressure_Tracker.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    ApplicationUser activeUser = database.Users.SingleOrDefault(c => c.Email == model.Email);
-                    return RedirectToAction("Index", "Dashboard", activeUser);
+                    return RedirectToAction("Index", "Dashboard", new { email = model.Email });
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -174,8 +173,7 @@ namespace Blood_Pressure_Tracker.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                    var activeUser = database.Users.SingleOrDefault(c => c.Email == user.Email);
-                    return RedirectToAction("Index", "Dashboard", activeUser);
+                    return RedirectToAction("Index", "Dashboard", new {email = user.Email});
                 }
                 AddErrors(result);
             }
@@ -345,7 +343,7 @@ namespace Blood_Pressure_Tracker.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Dashboard", new{ email = loginInfo.Email });
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -379,8 +377,8 @@ namespace Blood_Pressure_Tracker.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-                var result = await UserManager.CreateAsync(user);
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Gender = model.Gender, Weight = model.Weight, DataOfBirth = model.DateOfBirth, Name = model.Name};
+                var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
