@@ -8,7 +8,6 @@ namespace Blood_Pressure_Tracker.Models
 {
     public class Database : ApplicationDbContext
     {
-        public DbSet<ApplicationUser> ApplicationUsers;
-        public DbSet<PressureMeasure> pressureMeasures;
+        public DbSet<PressureMeasure> PressureMeasures { get; set; }
     }
 }

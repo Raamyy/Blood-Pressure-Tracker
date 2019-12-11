@@ -1,0 +1,11 @@
+﻿@model Blood_Pressure_Tracker.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome @Model.Name</h1>
+
+<button type="button" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model)'">Add</button>
+

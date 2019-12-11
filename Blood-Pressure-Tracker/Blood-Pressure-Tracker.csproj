@@ -191,6 +191,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -220,6 +221,14 @@
     <Compile Include="Migrations\201912081751567_Added-restriction-email-unique.designer.cs">
       <DependentUpon>201912081751567_Added-restriction-email-unique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912091802139_updated-Pressure-Measure.cs" />
+    <Compile Include="Migrations\201912091802139_updated-Pressure-Measure.designer.cs">
+      <DependentUpon>201912091802139_updated-Pressure-Measure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912091834471_AddedNameToUser.cs" />
+    <Compile Include="Migrations\201912091834471_AddedNameToUser.designer.cs">
+      <DependentUpon>201912091834471_AddedNameToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Database.cs" />
@@ -228,6 +237,7 @@
     <Compile Include="Models\PressureMeasure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="View Models\AddPressureMeasureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -286,6 +296,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\AddPressureMeasure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912081751567_Added-restriction-email-unique.resx">
       <DependentUpon>201912081751567_Added-restriction-email-unique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912091802139_updated-Pressure-Measure.resx">
+      <DependentUpon>201912091802139_updated-Pressure-Measure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912091834471_AddedNameToUser.resx">
+      <DependentUpon>201912091834471_AddedNameToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

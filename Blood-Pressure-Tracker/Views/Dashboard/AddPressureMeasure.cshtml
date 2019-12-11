@@ -1,0 +1,34 @@
+﻿@model Blood_Pressure_Tracker.View_Models.AddPressureMeasureViewModel
+
+@{
+    ViewBag.Title = "AddPressureMeasure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddPressureMeasureForUser", "Dashboard", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    <h4>Add a new measure.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Measure.Diastole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Measure.Diastole, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Measure.Systole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Measure.Systole, new { @class = "form-control" })
+        </div>
+    </div>
+    @Html.HiddenFor(model => model.User.UserName, new { value = @Model.User.UserName });
+    @Html.HiddenFor(model => model.User.Email, new { value = @Model.User.Email });
+    @Html.HiddenFor(model => model.User.Id, new { value = @Model.User.Id });
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Add" />
+        </div>
+    </div>
+}

@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -15,11 +16,13 @@ namespace Blood_Pressure_Tracker.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private Database database;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
+            database = new Database();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -79,7 +82,8 @@ namespace Blood_Pressure_Tracker.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    ApplicationUser activeUser = database.Users.SingleOrDefault(c => c.Email == model.Email);
+                    return RedirectToAction("Index", "Dashboard", activeUser);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -153,6 +157,7 @@ namespace Blood_Pressure_Tracker.Controllers
             {
                 var user = new ApplicationUser
                 {
+                    Name = model.Name,
                     UserName = model.Email,
                     Email = model.Email,
                     Weight = model.Weight,
@@ -169,8 +174,8 @@ namespace Blood_Pressure_Tracker.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    var activeUser = database.Users.SingleOrDefault(c => c.Email == user.Email);
+                    return RedirectToAction("Index", "Dashboard", activeUser);
                 }
                 AddErrors(result);
             }
@@ -425,8 +430,8 @@ namespace Blood_Pressure_Tracker.Controllers
                     _signInManager.Dispose();
                     _signInManager = null;
                 }
+                database.Dispose();
             }
-
             base.Dispose(disposing);
         }
 

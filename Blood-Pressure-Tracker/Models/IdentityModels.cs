@@ -17,6 +17,7 @@ namespace Blood_Pressure_Tracker.Models
     public class ApplicationUser : IdentityUser
     {
         // ID, Email and password are inherited
+        public string Name { get; set; }
         public DateTime DataOfBirth { get; set; }
         public Gender Gender { get; set; }
         public double Weight { get; set; }
