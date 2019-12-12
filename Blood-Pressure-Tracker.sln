@@ -1,9 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2011
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blood-Pressure-Tracker", "Blood-Pressure-Tracker\Blood-Pressure-Tracker.csproj", "{8B1D0035-0B81-49EF-A35E-761F535DCA6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email Notifier", "Email Notifier\Email Notifier.csproj", "{F40A7663-9243-429B-B4FE-EE3D5A5E8795}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF} = {BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email Sending Service", "Email Sending Service\Email Sending Service.csproj", "{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{8B1D0035-0B81-49EF-A35E-761F535DCA6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B1D0035-0B81-49EF-A35E-761F535DCA6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B1D0035-0B81-49EF-A35E-761F535DCA6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F40A7663-9243-429B-B4FE-EE3D5A5E8795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F40A7663-9243-429B-B4FE-EE3D5A5E8795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F40A7663-9243-429B-B4FE-EE3D5A5E8795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F40A7663-9243-429B-B4FE-EE3D5A5E8795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4D938A-08C9-407F-AC9D-A6B1D8480EEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

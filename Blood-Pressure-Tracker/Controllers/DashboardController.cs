@@ -10,11 +10,11 @@ namespace Blood_Pressure_Tracker.Controllers
 {
     public class DashboardController : Controller
     {
-        private Database database;
+        private ApplicationDbContext database;
 
         public DashboardController()
         {
-            database = new Database();
+            database = new ApplicationDbContext();
         }
 
         protected override void Dispose(bool disposing)

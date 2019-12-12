@@ -34,8 +34,14 @@ namespace Blood_Pressure_Tracker.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<PressureMeasure> PressureMeasures { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
+        {
+        }
+
+        public ApplicationDbContext(string nameOrConnectionString, bool throwIfV1Schema)
+            : base(nameOrConnectionString, throwIfV1Schema)
         {
         }
 

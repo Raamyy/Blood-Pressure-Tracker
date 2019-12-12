@@ -16,13 +16,13 @@ namespace Blood_Pressure_Tracker.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private Database database;
+        private ApplicationDbContext database;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
-            database = new Database();
+            database = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
