@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9516c327-e1c6-47dc-b710-a871ca97787f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:4542/DietPlan.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DietPlan.disco" MetadataType="Disco" ID="aad704bd-0b0a-4671-9e65-548d900bb4b8" SourceId="1" SourceUrl="http://localhost:4542/DietPlan.svc?disco" />
+    <MetadataFile FileName="DietPlan.xsd" MetadataType="Schema" ID="c792631d-028e-4c3d-9eab-90e4885d018b" SourceId="1" SourceUrl="http://localhost:4542/DietPlan.svc?xsd=xsd0" />
+    <MetadataFile FileName="DietPlan.wsdl" MetadataType="Wsdl" ID="7efa4d6d-86f4-4166-ae55-8b180b69ee97" SourceId="1" SourceUrl="http://localhost:4542/DietPlan.svc?wsdl" />
+    <MetadataFile FileName="DietPlan1.xsd" MetadataType="Schema" ID="55862f40-256d-4b4b-971d-6ab1c2ef6a91" SourceId="1" SourceUrl="http://localhost:4542/DietPlan.svc?xsd=xsd1" />
+    <MetadataFile FileName="DietPlan2.xsd" MetadataType="Schema" ID="021dfb24-e561-4cbf-95e5-a18c32a81c89" SourceId="1" SourceUrl="http://localhost:4542/DietPlan.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

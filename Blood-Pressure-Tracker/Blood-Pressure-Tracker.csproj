@@ -193,7 +193,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Connected Services\DietPlanServiceReference\Reference.cs">
+    <Compile Include="Connected Services\DietPlanRefrence\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -245,16 +245,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="View Models\AddPressureMeasureViewModel.cs" />
-    <Compile Include="Web_Services\DietPlan.svc.cs">
-      <DependentUpon>DietPlan.svc</DependentUpon>
-    </Compile>
-    <Compile Include="Web_Services\IDietPlan.cs" />
+    <Compile Include="View Models\ShowUserDietPlanViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DietPlanServiceReference\DietPlan.disco" />
-    <None Include="Connected Services\DietPlanServiceReference\configuration91.svcinfo" />
-    <None Include="Connected Services\DietPlanServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\DietPlanServiceReference\Reference.svcmap">
+    <None Include="Connected Services\DietPlanRefrence\DietPlan.disco" />
+    <None Include="Connected Services\DietPlanRefrence\configuration91.svcinfo" />
+    <None Include="Connected Services\DietPlanRefrence\configuration.svcinfo" />
+    <None Include="Connected Services\DietPlanRefrence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -269,15 +266,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web_Services\DietPlan.svc" />
-    <None Include="Connected Services\DietPlanServiceReference\DietPlan.wsdl" />
-    <None Include="Connected Services\DietPlanServiceReference\DietPlan.xsd">
+    <None Include="Connected Services\DietPlanRefrence\DietPlan.wsdl" />
+    <None Include="Connected Services\DietPlanRefrence\DietPlan.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DietPlanServiceReference\DietPlan1.xsd">
+    <None Include="Connected Services\DietPlanRefrence\DietPlan1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\DietPlanServiceReference\DietPlan2.xsd">
+    <None Include="Connected Services\DietPlanRefrence\DietPlan2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -329,6 +325,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\AddPressureMeasure.cshtml" />
+    <Content Include="Views\Dashboard\ShowUserDietPlan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,7 +375,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\DietPlanServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\DietPlanRefrence\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

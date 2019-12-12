@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Blood_Pressure_Tracker.Web_Services.DietPlan" CodeBehind="DietPlan.svc.cs" %>

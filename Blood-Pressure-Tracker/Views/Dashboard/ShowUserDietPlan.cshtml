@@ -1,0 +1,30 @@
+﻿@model Blood_Pressure_Tracker.View_Models.ShowUserDietPlanViewModel
+
+@{
+    ViewBag.Title = "ShowUserDietPlan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Blood pressure category @Model.bloodPressureCategory</h1>
+@if (Model.Dictionary.Count == 0)
+{
+    <h1>Check your doctor</h1>
+}
+else
+{
+    <table class="table table-hover">
+        <tr>
+            <th>Ingredient</th>
+            <th>Benefits</th>
+        </tr>
+        @foreach (var pair in Model.Dictionary)
+        {
+            <tr>
+                <td>@pair.Key</td>
+                <td>@pair.Value</td>
+            </tr>
+        }
+    </table>
+}
+
+

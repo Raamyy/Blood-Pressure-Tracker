@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Blood_Pressure_Tracker.Models;
 using Blood_Pressure_Tracker.View_Models;
+using System.Data.Entity;
+using Blood_Pressure_Tracker.DietPlanRefrence;
 
 namespace Blood_Pressure_Tracker.Controllers
 {
@@ -25,7 +28,7 @@ namespace Blood_Pressure_Tracker.Controllers
         // GET: Dashboard
         public ActionResult Index(string email)
         {
-            ApplicationUser user = database.Users.SingleOrDefault(m => m.Email == email);
+            ApplicationUser user = database.Users.Include(c => c.PressureMeasures).SingleOrDefault(m => m.Email == email);
             return View(user);
         }
 
@@ -49,6 +52,27 @@ namespace Blood_Pressure_Tracker.Controllers
             activeUser.PressureMeasures.Add(model.Measure);
             database.SaveChanges();
             return RedirectToAction("Index", "Dashboard", new { email = model.User.Email});
+        }
+
+        public ActionResult ShowUserDietPlan(ApplicationUser applicationUser)
+        {
+            ShowUserDietPlanViewModel showUserDietPlanViewModel = new ShowUserDietPlanViewModel();
+            applicationUser = database.Users.Include(c => c.PressureMeasures).SingleOrDefault(m => m.Email == applicationUser.Email);
+            DietPlanRefrence.DietPlanClient serviceDietPlanClient =  new DietPlanClient();
+            if (applicationUser.PressureMeasures.Count() != 0)
+            {
+                PressureMeasure measure = applicationUser.PressureMeasures.Last();
+                var dictionary = serviceDietPlanClient.GetPreferDietPlan((uint)measure.Systole, (uint)measure.Diastole);
+                showUserDietPlanViewModel.Dictionary = dictionary;
+                showUserDietPlanViewModel.bloodPressureCategory =
+                    serviceDietPlanClient.GetBloodPressureType((uint) measure.Systole, (uint) measure.Diastole);
+            }
+            else
+            {
+                showUserDietPlanViewModel.Dictionary = new Dictionary<string, string>();
+                showUserDietPlanViewModel.bloodPressureCategory = "Invalid";
+            }
+            return View(showUserDietPlanViewModel);
         }
     }
 }

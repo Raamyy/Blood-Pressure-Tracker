@@ -7,5 +7,20 @@
 
 <h1>Welcome @Model.Name</h1>
 
+@if (Model.PressureMeasures.Count == 0)
+{
+    <h1>No available data</h1>
+}
+else
+{
+    <ul>
+        @foreach (var pressureMeasure in Model.PressureMeasures)
+        {
+            <li>@pressureMeasure.Date.ToString() : Diastole @pressureMeasure.Diastole , Systole @pressureMeasure.Systole</li>
+        }
+    </ul>
+}
+
 <button type="button" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model)'">Add</button>
+<button type="button" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model)'">Show Diet Plan</button>
 
