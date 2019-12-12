@@ -29,11 +29,15 @@ namespace Blood_Pressure_Tracker.Controllers
         public ActionResult Index(string email)
         {
             ApplicationUser user = database.Users.Include(c => c.PressureMeasures).SingleOrDefault(m => m.Email == email);
+            if (user == null)
+                return HttpNotFound();
             return View(user);
         }
 
         public ActionResult AddPressureMeasure(ApplicationUser user)
         {
+            if (user == null)
+                return HttpNotFound();
             AddPressureMeasureViewModel model = new AddPressureMeasureViewModel
             {
                 User = user
@@ -44,6 +48,8 @@ namespace Blood_Pressure_Tracker.Controllers
         [HttpPost]
         public ActionResult AddPressureMeasureForUser(AddPressureMeasureViewModel model)
         {
+            if (model == null)
+                return HttpNotFound();
             ApplicationUser activeUser = database.Users.SingleOrDefault(c => c.Email == model.User.Email);
             model.Measure.User = activeUser;
             model.Measure.UserId = activeUser.Id;
@@ -56,6 +62,8 @@ namespace Blood_Pressure_Tracker.Controllers
 
         public ActionResult ShowUserDietPlan(ApplicationUser applicationUser)
         {
+            if (applicationUser == null)
+                return HttpNotFound();
             ShowUserDietPlanViewModel showUserDietPlanViewModel = new ShowUserDietPlanViewModel();
             applicationUser = database.Users.Include(c => c.PressureMeasures).SingleOrDefault(m => m.Email == applicationUser.Email);
             DietPlanRefrence.DietPlanClient serviceDietPlanClient =  new DietPlanClient();
