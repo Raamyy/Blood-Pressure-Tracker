@@ -16,7 +16,9 @@ else
     <ul>
         @foreach (var pressureMeasure in Model.ApplicationUser.PressureMeasures)
         {
-            <li>@pressureMeasure.Date.ToString() : Diastole @pressureMeasure.Diastole , Systole @pressureMeasure.Systole</li>
+            <li>
+                @Html.ActionLink($"{@pressureMeasure.Date.ToString()} : Diastole {@pressureMeasure.Diastole} , Systole {@pressureMeasure.Systole}", "EditPressureMeasure", "PressureMeasure", new {id = pressureMeasure.Id}, null)
+            </li>
         }
     </ul>
 }

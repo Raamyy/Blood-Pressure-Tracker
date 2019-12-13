@@ -1,0 +1,57 @@
+﻿@using Blood_Pressure_Tracker.Models
+@model Blood_Pressure_Tracker.View_Models.EditAccountInformationViewModel
+
+@{
+    ViewBag.Title = "EditAccountInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("EditAccountInformation", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Edit Account Information.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @readonly = true })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Weight, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Weight, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DataOfBirth, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.DataOfBirth, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
+        <div class="form-check">
+            <label class="form-check-label">
+                @Html.RadioButtonFor(m => m.Gender, Gender.Male, new { @class = "form-check-input" })Male
+            </label>
+            <label class="form-check-label">
+                @Html.RadioButtonFor(m => m.Gender, Gender.Female, new { @class = "form-check-input" })Female
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Edit" />
+        </div>
+    </div>
+
+}
+

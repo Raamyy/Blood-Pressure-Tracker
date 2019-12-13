@@ -1,0 +1,41 @@
+﻿@model Blood_Pressure_Tracker.View_Models.EditPressureMeasureViewModel
+
+
+@{
+    ViewBag.Title = "EditPressureMeasure";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("EditPressureMeasure", "PressureMeasure", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h4>Edit pressure measure.</h4>
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @readonly = true })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Diastole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Diastole, new { @class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Systole, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Systole, new { @class = "form-control"})
+        </div>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Edit" />
+        </div>
+    </div>
+
+}
+
