@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1ad93fff-aaf4-430d-8d59-39421624de93" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5476/PlottingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PlottingService.disco" MetadataType="Disco" ID="bee72e85-40a5-4dcd-b48a-d59d12e5b7fb" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?disco" />
+    <MetadataFile FileName="PlottingService2.xsd" MetadataType="Schema" ID="86b83daa-83ac-4d09-a404-e5eaddaa55e8" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PlottingService3.xsd" MetadataType="Schema" ID="0fe8dc7e-c664-4c24-8f72-1649351c3f64" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PlottingService.wsdl" MetadataType="Wsdl" ID="34cecdee-5656-4ed2-9362-e7252f0dcaec" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?wsdl" />
+    <MetadataFile FileName="PlottingService1.xsd" MetadataType="Schema" ID="416afddd-567f-4a4b-989c-09bbc86cd73b" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

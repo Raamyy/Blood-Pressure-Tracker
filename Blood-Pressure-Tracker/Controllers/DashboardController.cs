@@ -8,6 +8,7 @@ using Blood_Pressure_Tracker.Models;
 using Blood_Pressure_Tracker.View_Models;
 using System.Data.Entity;
 using Blood_Pressure_Tracker.DietPlanRefrence;
+using Blood_Pressure_Tracker.PlotiingServiceRefrence;
 
 namespace Blood_Pressure_Tracker.Controllers
 {
@@ -28,10 +29,24 @@ namespace Blood_Pressure_Tracker.Controllers
         // GET: Dashboard
         public ActionResult Index(string email)
         {
+            PlotiingServiceRefrence.PlottingServiceClient plottingServiceClient = new PlottingServiceClient();
             ApplicationUser user = database.Users.Include(c => c.PressureMeasures).SingleOrDefault(m => m.Email == email);
             if (user == null)
                 return HttpNotFound();
-            return View(user);
+            List<string> datesList = new List<string>();
+            List<int> diastolesList = new List<int>(), systolesList = new List<int>();
+            foreach (var pressureMeasure in user.PressureMeasures)
+            {
+                datesList.Add(pressureMeasure.Date.ToString());
+                diastolesList.Add(pressureMeasure.Diastole);
+                systolesList.Add(pressureMeasure.Systole);
+            }
+            DashboardViewModel dashboardViewModel = new DashboardViewModel
+            {
+                ApplicationUser = user,
+                ChartBytes = plottingServiceClient.Plot_Chart(datesList.ToArray(), diastolesList.ToArray(), systolesList.ToArray())
+            };
+            return View(dashboardViewModel);
         }
 
         public ActionResult AddPressureMeasure(ApplicationUser user)

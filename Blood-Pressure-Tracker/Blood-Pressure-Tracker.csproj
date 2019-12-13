@@ -198,6 +198,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\PlotiingServiceRefrence\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -245,6 +250,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="View Models\AddPressureMeasureViewModel.cs" />
+    <Compile Include="View Models\DashboardViewModel.cs" />
     <Compile Include="View Models\ShowUserDietPlanViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +258,13 @@
     <None Include="Connected Services\DietPlanRefrence\configuration91.svcinfo" />
     <None Include="Connected Services\DietPlanRefrence\configuration.svcinfo" />
     <None Include="Connected Services\DietPlanRefrence\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService.disco" />
+    <None Include="Connected Services\PlotiingServiceRefrence\configuration91.svcinfo" />
+    <None Include="Connected Services\PlotiingServiceRefrence\configuration.svcinfo" />
+    <None Include="Connected Services\PlotiingServiceRefrence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -274,6 +287,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\DietPlanRefrence\DietPlan2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService.wsdl" />
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -376,6 +399,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\DietPlanRefrence\" />
+    <WCFMetadataStorage Include="Connected Services\PlotiingServiceRefrence\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

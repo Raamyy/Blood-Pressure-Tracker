@@ -1,26 +1,28 @@
-﻿@model Blood_Pressure_Tracker.Models.ApplicationUser
+﻿@model Blood_Pressure_Tracker.View_Models.DashboardViewModel
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Welcome @Model.Name</h1>
+<h1>Welcome @Model.ApplicationUser.Name</h1>
 
-@if (Model.PressureMeasures.Count == 0)
+@if (Model.ApplicationUser.PressureMeasures.Count == 0)
 {
     <h1>No available data</h1>
 }
 else
 {
     <ul>
-        @foreach (var pressureMeasure in Model.PressureMeasures)
+        @foreach (var pressureMeasure in Model.ApplicationUser.PressureMeasures)
         {
             <li>@pressureMeasure.Date.ToString() : Diastole @pressureMeasure.Diastole , Systole @pressureMeasure.Systole</li>
         }
     </ul>
 }
 
-<button type="button" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model)'">Add</button>
-<button type="button" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model)'">Show Diet Plan</button>
+<img src="data:image/png;base64,@System.Convert.ToBase64String(Model.ChartBytes)" alt="" />
+
+<button type="button" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model.ApplicationUser)'">Add</button>
+<button type="button" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model.ApplicationUser)'">Show Diet Plan</button>
 
