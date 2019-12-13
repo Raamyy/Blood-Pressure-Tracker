@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Blood_Pressure_Tracker.Models;
+using Blood_Pressure_Tracker.View_Models;
 
 namespace Blood_Pressure_Tracker.Controllers
 {
@@ -15,9 +16,11 @@ namespace Blood_Pressure_Tracker.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        ApplicationDbContext dbContext = new ApplicationDbContext();
 
         public ManageController()
         {
+            dbContext = new ApplicationDbContext();
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -322,6 +325,33 @@ namespace Blood_Pressure_Tracker.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+        public ActionResult EditAccountInformation()
+        {
+            ApplicationUser user = dbContext.Users.SingleOrDefault(m => m.UserName == User.Identity.Name);
+            EditAccountInformationViewModel model = new EditAccountInformationViewModel
+            {
+                Email = user.Email,
+                DataOfBirth =  user.DataOfBirth,
+                Gender = user.Gender,
+                Name = user.Name,
+                Weight = user.Weight
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditAccountInformation(EditAccountInformationViewModel model)
+        {
+            ApplicationUser user = dbContext.Users.SingleOrDefault(m => m.UserName == User.Identity.Name);
+            user.Name = model.Name;
+            user.Gender = model.Gender;
+            user.Weight = model.Weight;
+            user.DataOfBirth = model.DataOfBirth;
+            dbContext.SaveChanges();
+            return RedirectToAction("Index", "Manage");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)
@@ -329,7 +359,7 @@ namespace Blood_Pressure_Tracker.Controllers
                 _userManager.Dispose();
                 _userManager = null;
             }
-
+            dbContext.Dispose();
             base.Dispose(disposing);
         }
 

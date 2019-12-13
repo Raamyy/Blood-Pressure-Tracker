@@ -251,6 +251,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="View Models\AddPressureMeasureViewModel.cs" />
     <Compile Include="View Models\DashboardViewModel.cs" />
+    <Compile Include="View Models\EditAccountInformationViewModel.cs" />
     <Compile Include="View Models\ShowUserDietPlanViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +350,7 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\AddPressureMeasure.cshtml" />
     <Content Include="Views\Dashboard\ShowUserDietPlan.cshtml" />
+    <Content Include="Views\Manage\EditAccountInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

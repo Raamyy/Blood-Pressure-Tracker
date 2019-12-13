@@ -1,4 +1,5 @@
-﻿@model Blood_Pressure_Tracker.Models.IndexViewModel
+﻿@using Microsoft.AspNet.Identity
+@model Blood_Pressure_Tracker.Models.IndexViewModel
 @{
     ViewBag.Title = "Manage";
 }
@@ -84,4 +85,5 @@
                 }*@
         </dd>
     </dl>
+    @Html.ActionLink("Edit Account Information", "EditAccountInformation")
 </div>
