@@ -12,17 +12,17 @@
     ApplicationDbContext applicationDbContext = new ApplicationDbContext();
     ApplicationUser user = applicationDbContext.Users.SingleOrDefault(m => m.Email == User.Identity.Name);
 
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right" >
         <li>
-            @Html.ActionLink("Hello " + user.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Hello " + user.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "navbar-brand" })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li><a class = "navbar-brand" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-dark bg-primary navbar-right", style="margin-left: 70%">
+    <ul class="nav navbar-nav navbar-dark bg-primary navbar-right">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "navbar-brand" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "navbar-brand" })</li>
     </ul>

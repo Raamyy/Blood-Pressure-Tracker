@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Blood Pressure Tracker</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="navbar navbar-expand-lg  sticky-top navbar-dark bg-primary"  style="margin-top:-50px">
         <div class="container">
 
             <div class="navbar-header">
@@ -19,7 +19,7 @@
                 @Html.ActionLink("Blood Pressure Tracker", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarColor01">
+            <div class="collapse navbar-collapse" id="navbarColor01" style="margin-left: 60%">
                 @Html.Partial("_LoginPartial")
             </div>
 
@@ -29,7 +29,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Blood Pressure Tracker</p>
         </footer>
     </div>
 

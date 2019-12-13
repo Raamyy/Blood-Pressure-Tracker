@@ -18,7 +18,7 @@ else
         {
             <tr>
                 <td>@Html.ActionLink($"{@pressureMeasure.Date.ToString()} : Diastole {@pressureMeasure.Diastole} , Systole {@pressureMeasure.Systole}", "EditPressureMeasure", "PressureMeasure", new { id = pressureMeasure.Id }, null)</td>
-                <td><button type="button" onclick="location.href = '@Url.Action("DeletePressureMeasure", "PressureMeasure", new {id = @pressureMeasure.Id})'">Delete</button></td>
+                <td><button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("DeletePressureMeasure", "PressureMeasure", new {id = @pressureMeasure.Id})'">Delete</button></td>
             </tr>
         }
     </table>
@@ -26,6 +26,6 @@ else
 
 <img src="data:image/png;base64,@System.Convert.ToBase64String(Model.ChartBytes)" alt="" />
 
-<button type="button" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model.ApplicationUser)'">Add</button>
-<button type="button" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model.ApplicationUser)'">Show Diet Plan</button>
+<button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model.ApplicationUser)'">Add</button>
+<button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model.ApplicationUser)'">Show Diet Plan</button>
 
