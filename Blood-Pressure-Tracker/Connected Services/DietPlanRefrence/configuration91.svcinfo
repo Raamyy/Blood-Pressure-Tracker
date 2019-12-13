@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6MxxN6QFBDkcn0tYErHvlQGOgdI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="mAbK9PjozrLEgudZmNChOrNMhmg=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IDietPlan">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IDietPlan" contract="DietPlanRefrence.IDietPlan" bindingType="basicHttpBinding" address="http://localhost:4542/DietPlan.svc" bindingConfiguration="BasicHttpBinding_IDietPlan">
+    <endpoint name="BasicHttpBinding_IDietPlan" contract="DietPlanRefrence.IDietPlan" bindingType="basicHttpBinding" address="http://localhost:4734/DietPlan.svc" bindingConfiguration="BasicHttpBinding_IDietPlan">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:4542/DietPlan.svc</serializedValue>
+          <serializedValue>http://localhost:4734/DietPlan.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

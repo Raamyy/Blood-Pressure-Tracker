@@ -21,12 +21,9 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44386</IISExpressSSLPort>
-    <IISExpressAnonymousAuthentication>
-    </IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>
-    </IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode>
-    </IISExpressUseClassicPipelineMode>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -260,20 +257,40 @@
     <Compile Include="View Models\ShowUserDietPlanViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\DietPlanRefrence\DietPlan.disco" />
     <None Include="Connected Services\DietPlanRefrence\configuration91.svcinfo" />
     <None Include="Connected Services\DietPlanRefrence\configuration.svcinfo" />
+    <None Include="Connected Services\DietPlanRefrence\DietPlan1.wsdl" />
+    <None Include="Connected Services\DietPlanRefrence\DietPlan3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DietPlanRefrence\DietPlan31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\DietPlanRefrence\DietPlan32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\DietPlanRefrence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService.disco" />
     <None Include="Connected Services\PlotiingServiceRefrence\configuration91.svcinfo" />
     <None Include="Connected Services\PlotiingServiceRefrence\configuration.svcinfo" />
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService1.wsdl" />
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\PlotiingServiceRefrence\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService1.disco" />
+    <None Include="Connected Services\DietPlanRefrence\DietPlan1.disco" />
     <Content Include="Content\bootstrap-Journal.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -286,26 +303,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Connected Services\DietPlanRefrence\DietPlan.wsdl" />
-    <None Include="Connected Services\DietPlanRefrence\DietPlan.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\DietPlanRefrence\DietPlan1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\DietPlanRefrence\DietPlan2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService.wsdl" />
-    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\PlotiingServiceRefrence\PlottingService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

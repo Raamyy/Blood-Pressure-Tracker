@@ -13,14 +13,15 @@
 }
 else
 {
-    <ul>
-        @foreach (var pressureMeasure in Model.ApplicationUser.PressureMeasures)
+    <table class="table table-hover">
+        @foreach (var @pressureMeasure in Model.ApplicationUser.PressureMeasures)
         {
-            <li>
-                @Html.ActionLink($"{@pressureMeasure.Date.ToString()} : Diastole {@pressureMeasure.Diastole} , Systole {@pressureMeasure.Systole}", "EditPressureMeasure", "PressureMeasure", new {id = pressureMeasure.Id}, null)
-            </li>
+            <tr>
+                <td>@Html.ActionLink($"{@pressureMeasure.Date.ToString()} : Diastole {@pressureMeasure.Diastole} , Systole {@pressureMeasure.Systole}", "EditPressureMeasure", "PressureMeasure", new { id = pressureMeasure.Id }, null)</td>
+                <td><button type="button" onclick="location.href = '@Url.Action("DeletePressureMeasure", "PressureMeasure", new {id = @pressureMeasure.Id})'">Delete</button></td>
+            </tr>
         }
-    </ul>
+    </table>
 }
 
 <img src="data:image/png;base64,@System.Convert.ToBase64String(Model.ChartBytes)" alt="" />

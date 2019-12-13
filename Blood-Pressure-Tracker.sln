@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blood-Pressure-Tracker", "Blood-Pressure-Tracker\Blood-Pressure-Tracker.csproj", "{8B1D0035-0B81-49EF-A35E-761F535DCA6D}"
 	ProjectSection(ProjectDependencies) = postProject
+		{F9953FD0-4B0C-4F06-BCDF-8D47EF6F340B} = {F9953FD0-4B0C-4F06-BCDF-8D47EF6F340B}
 		{CEFAC1D6-1390-4A31-A925-D75A0857EC17} = {CEFAC1D6-1390-4A31-A925-D75A0857EC17}
 	EndProjectSection
 EndProject

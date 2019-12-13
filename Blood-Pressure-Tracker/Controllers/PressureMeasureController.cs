@@ -47,5 +47,13 @@ namespace Blood_Pressure_Tracker.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("Index", "Dashboard", new { email = User.Identity.Name});
         }
+
+        public ActionResult DeletePressureMeasure(int id)
+        {
+            PressureMeasure pressureMeasure = dbContext.PressureMeasures.SingleOrDefault(m => m.Id == id);
+            dbContext.PressureMeasures.Remove(pressureMeasure);
+            dbContext.SaveChanges();
+            return RedirectToAction("Index", "Dashboard", new {email = User.Identity.Name});
+        }
     }
 }

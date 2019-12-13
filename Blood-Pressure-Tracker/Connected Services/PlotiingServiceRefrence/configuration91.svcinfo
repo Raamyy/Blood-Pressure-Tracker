@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="L6jc9k+QBgJj1ePxsznYbd0CY3k=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3uwuD8XTFRXeKzbietA0whHa+sw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IPlottingService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IPlottingService" contract="PlotiingServiceRefrence.IPlottingService" bindingType="basicHttpBinding" address="http://localhost:5476/PlottingService.svc" bindingConfiguration="BasicHttpBinding_IPlottingService">
+    <endpoint name="BasicHttpBinding_IPlottingService" contract="PlotiingServiceRefrence.IPlottingService" bindingType="basicHttpBinding" address="http://localhost:6677/PlottingService.svc" bindingConfiguration="BasicHttpBinding_IPlottingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:5476/PlottingService.svc</serializedValue>
+          <serializedValue>http://localhost:6677/PlottingService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

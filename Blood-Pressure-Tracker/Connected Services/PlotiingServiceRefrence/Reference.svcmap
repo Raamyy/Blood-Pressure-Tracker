@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:5476/PlottingService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:6677/PlottingService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PlottingService.disco" MetadataType="Disco" ID="bee72e85-40a5-4dcd-b48a-d59d12e5b7fb" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?disco" />
-    <MetadataFile FileName="PlottingService2.xsd" MetadataType="Schema" ID="86b83daa-83ac-4d09-a404-e5eaddaa55e8" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PlottingService3.xsd" MetadataType="Schema" ID="0fe8dc7e-c664-4c24-8f72-1649351c3f64" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PlottingService.wsdl" MetadataType="Wsdl" ID="34cecdee-5656-4ed2-9362-e7252f0dcaec" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?wsdl" />
-    <MetadataFile FileName="PlottingService1.xsd" MetadataType="Schema" ID="416afddd-567f-4a4b-989c-09bbc86cd73b" SourceId="1" SourceUrl="http://localhost:5476/PlottingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlottingService.xsd" MetadataType="Schema" ID="258419ae-c91a-428c-98dd-a5b49093f863" SourceId="1" SourceUrl="http://localhost:6677/PlottingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PlottingService1.xsd" MetadataType="Schema" ID="669a1d10-2500-4dc0-9616-4d9de1f085cc" SourceId="1" SourceUrl="http://localhost:6677/PlottingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PlottingService1.disco" MetadataType="Disco" ID="cd7d17a5-12ec-4f5c-8cbd-95c1dcfaf8d3" SourceId="1" SourceUrl="http://localhost:6677/PlottingService.svc?disco" />
+    <MetadataFile FileName="PlottingService2.xsd" MetadataType="Schema" ID="11d8e780-d541-4204-b378-0ab63f82552d" SourceId="1" SourceUrl="http://localhost:6677/PlottingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlottingService1.wsdl" MetadataType="Wsdl" ID="5e163997-861c-42e6-8c57-65fb519f3fc4" SourceId="1" SourceUrl="http://localhost:6677/PlottingService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
