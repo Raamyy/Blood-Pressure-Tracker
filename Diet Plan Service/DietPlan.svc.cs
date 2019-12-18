@@ -91,13 +91,13 @@ namespace Diet_Plan_Service
                     return "low";
                 else if (systolic <= 130 && diastolic <= 85)
                     return "normal";
-                else if (systolic > 130 && diastolic > 85)
+                else if (systolic < 200 && diastolic > 100)
                     return "high";
                 else
                     return "invalid";
             }
-            else
-                return "invaild";
+
+            return "invalid";
         }
 
         /// <summary>
