@@ -5,27 +5,60 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Welcome @Model.ApplicationUser.Name</h1>
+<div class="container">
+    <div class="row">
+        <h1 class="col-sm-8">Dashboard</h1>
+        <div class="btn-group btn-group-justified col-sm-4 float-right">
+            <button type="button" class="btn btn-outline-primary col-sm-6"
+                    onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model.ApplicationUser)'">
+                New Measure
+            </button>
+            <button type="button" class="btn btn-outline-primary col-sm-6"
+                    onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model.ApplicationUser)'">
+                Show Diet Plan
+            </button>
+        </div>
+    </div>
+</div>
 
-@if (Model.ApplicationUser.PressureMeasures.Count == 0)
-{
-    <h1>No available data</h1>
-}
-else
-{
-    <table class="table table-hover">
-        @foreach (var @pressureMeasure in Model.ApplicationUser.PressureMeasures)
+<div class="container">
+    <div class="row" style="padding-top: 30px">
+        <div class="col-sm-6">
+            <div class="col-sm-12">
+                <img src="data:image/png;base64,@System.Convert.ToBase64String(Model.ChartBytes)" style="width: 100%" alt="" />
+            </div>
+        </div>
+
+        @if (Model.ApplicationUser.PressureMeasures.Count == 0)
         {
-            <tr>
-                <td>@Html.ActionLink($"{@pressureMeasure.Date.ToString()} : Diastole {@pressureMeasure.Diastole} , Systole {@pressureMeasure.Systole}", "EditPressureMeasure", "PressureMeasure", new { id = pressureMeasure.Id }, null)</td>
-                <td><button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("DeletePressureMeasure", "PressureMeasure", new {id = @pressureMeasure.Id})'">Delete</button></td>
-            </tr>
+            <h2>No available data</h2>
         }
-    </table>
-}
-
-<img src="data:image/png;base64,@System.Convert.ToBase64String(Model.ChartBytes)" alt="" />
-
-<button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("AddPressureMeasure", "Dashboard", Model.ApplicationUser)'">Add</button>
-<button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("ShowUserDietPlan", "Dashboard", Model.ApplicationUser)'">Show Diet Plan</button>
+        else
+        {
+            <div class=" col-sm-6">
+                <h3>Blood measure history</h3>
+                <table class="table table-hover">
+                    <tbody style="height:350px; overflow-y:auto; display:block">
+                        @foreach (var @pressureMeasure in Model.ApplicationUser.PressureMeasures)
+                        {
+                            <tr>
+                                <td class="col-sm-8">
+                                    @Html.ActionLink($"Systole {@pressureMeasure.Systole}, Diastole {@pressureMeasure.Diastole} | " +
+                                   $"{@pressureMeasure.Date.ToString()}", "EditPressureMeasure", "PressureMeasure",
+                                   new { id = pressureMeasure.Id }, null)
+                                </td>
+                                <td class="col-sm-4">
+                                    <button type="button" class="btn btn-primary float-right" onclick="location.href =
+                                        '@Url.Action("DeletePressureMeasure", "PressureMeasure", new {id = @pressureMeasure.Id})'">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
 

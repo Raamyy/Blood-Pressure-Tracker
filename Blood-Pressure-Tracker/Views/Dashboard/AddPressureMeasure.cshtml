@@ -7,7 +7,17 @@
 
 @using (Html.BeginForm("AddPressureMeasureForUser", "Dashboard", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    <h4>Add a new measure.</h4>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-sm-10">Add new measure</h1>
+            <div class="btn-group btn-group-justified col-sm-2 float-right">
+                <button type="button" class="btn btn-outline-primary"
+                        onclick="location.href = '@Url.Action("Index", "Home")'">
+                    Back
+                </button>
+            </div>
+        </div>
+    </div>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">

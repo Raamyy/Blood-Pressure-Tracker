@@ -3,28 +3,41 @@
 @{
     ViewBag.Title = "ShowUserDietPlan";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var BloodCategory = Model.bloodPressureCategory;
 }
 
-<h1>Blood pressure category @Model.bloodPressureCategory</h1>
+
+<div class="container">
+    <div class="row">
+        <h1 class="col-sm-10">Your blood pressure is @BloodCategory.ToUpper()</h1>
+        <div class="btn-group btn-group-justified col-sm-2 float-right">
+            <button type="button" class="btn btn-outline-primary"
+                    onclick="location.href = '@Url.Action("Index", "Home")'">
+                Back
+            </button>
+        </div>
+    </div>
+</div>
+
+
 @if (Model.Dictionary.Count == 0)
 {
     <h1>Check your doctor</h1>
 }
 else
 {
-    <table class="table table-hover">
-        <tr>
-            <th>Ingredient</th>
-            <th>Benefits</th>
-        </tr>
-        @foreach (var pair in Model.Dictionary)
-        {
-            <tr>
-                <td>@pair.Key</td>
-                <td>@pair.Value</td>
-            </tr>
-        }
-    </table>
+    <!--<h5>Here is what you can do.</h5>-->
+    <div style="padding-top: 30px">
+        <table class="table">
+            <tbody>
+                @foreach (var pair in Model.Dictionary)
+                {
+                    <tr>
+                        <td><h5>@pair.Key</h5></td>
+                        <td>@pair.Value</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
-
-

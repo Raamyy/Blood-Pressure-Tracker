@@ -7,22 +7,22 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    ApplicationDbContext applicationDbContext = new ApplicationDbContext();
-    ApplicationUser user = applicationDbContext.Users.SingleOrDefault(m => m.Email == User.Identity.Name);
+        ApplicationDbContext applicationDbContext = new ApplicationDbContext();
+        ApplicationUser user = applicationDbContext.Users.SingleOrDefault(m => m.Email == User.Identity.Name);
 
-    <ul class="nav navbar-nav navbar-right" >
-        <li>
-            @Html.ActionLink("Hello " + user.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "navbar-brand" })
-        </li>
-        <li><a class = "navbar-brand" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + user.Name.Split()[0] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "navbar-brand" })
+            </li>
+            <li><a class="navbar-brand" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-dark bg-primary navbar-right">
+    <ul class="nav navbar-nav navbar-right navbar-dark">
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "navbar-brand" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "navbar-brand" })</li>
     </ul>
