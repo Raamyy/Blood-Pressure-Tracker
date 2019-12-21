@@ -2,37 +2,47 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Blood Pressure Tracker</h1>
-    <p class="lead">Blood Pressure Tracker let's you monitor your <b>health conditions</b>, including <b>plotting</b> your all time measures and <b>recommendation</b> of diet plans to you to follow.</p>
-    <p><a href="../Account/Register" class="btn btn-primary btn-lg">Register Now &raquo;</a></p>
+<div class="container-fluid text-center" style="padding: 50px; background-color:#e8175d">
+    <h3 class="text-light" style="padding: 30px">Blood Pressure Tracker</h3>
+    <img src="~/Resources/blood-pressure-img.jpg" class="rounded-circle" alt=""
+         style="padding: 30px; width: 40%" />
+    <h5 class="text-light" style="padding: 30px">
+        Blood Pressure Tracker let's you monitor your health conditions,
+        including plotting your all time measures and recommendation of diet plans to you to follow.
+    </h5>
+    <a href="../Account/Register" class="btn btn-outline-light btn-lg">Register Now</a>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>High Blood Pressure</h2>
-        <p>
-            <b>Anxiety, stress or strenuous exercise</b> can all cause temporary high blood pressure levels in both diabetics and non-diabetics.<br/> However, high blood pressure is diagnosed when you have several high readings.
-</p>
-        <p><a class="btn btn-primary" href="#">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Normal Blood Pressure</h2>
-        <p>Keeping on normal blood pressure can be quite challenging.<br/>
-            You will have to keep on a:<br/>
-            <ul>
-            <li><b>Healthy diet plan</b></li>
-            <li><b>Exercise regularly</b></li>
-            <li><b>Keep track of your blood pressure</b></li>
-            </ul> 
+<div class="container-fluid text-center" style="padding: 50px">
+    <h3 style="padding: 30px">What is your blood pressure!?</h3>
+    <div class="row" style="padding: 30px">
+        <div class="col-sm-4" style="padding: 30px">
+            <h4>High</h4>
+            <p>
+                <b>Anxiety, stress or strenuous exercise</b> can all cause temporary high blood pressure
+                levels in both diabetics and non-diabetics. However, high blood pressure is diagnosed when
+                you have several high readings.
             </p>
-        <p><a class="btn btn-primary" href="#">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Low Blood Pressure</h2>
-        <p>Even moderate forms of low blood pressure can cause <b>dizziness, weakness, fainting</b> and a risk of injury from falls.
-            <br/>
-            And severely low blood pressure can deprive your body of enough oxygen to carry out its normal functions. </p>
-        <p><a class="btn btn-primary" href="#">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-sm-4" style="padding: 30px">
+            <h4>Normal</h4>
+            <p>
+                Keeping on normal blood pressure can be quite challenging.<br />
+                You will have to keep on a:<br />
+                <ul>
+                    <li><b>Healthy diet plan</b></li>
+                    <li><b>Exercise regularly</b></li>
+                    <li><b>Keep track of your blood pressure</b></li>
+                </ul>
+            </p>
+        </div>
+        <div class="col-sm-4" style="padding: 30px">
+            <h4>Low</h4>
+            <p>
+                Even moderate forms of low blood pressure can cause <b>dizziness, weakness, fainting</b> and 
+                a risk of injury from falls. And severely low blood pressure can deprive your body of enough 
+                oxygen to carry out its normal functions.
+            </p>
+        </div>
     </div>
 </div>
