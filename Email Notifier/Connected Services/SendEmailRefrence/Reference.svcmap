@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b293d0b7-5808-40ea-b068-a7c8e6f9cf97" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5d3b60fe-bcde-4032-bab7-fcd959162815" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:4323/SendEmailService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:4375/SendEmailService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SendEmailService.wsdl" MetadataType="Wsdl" ID="b8b6743a-9e42-48a5-b284-7f3aa0de06d0" SourceId="1" SourceUrl="http://localhost:4323/SendEmailService.svc?wsdl" />
-    <MetadataFile FileName="SendEmailService.xsd" MetadataType="Schema" ID="fc88a7c3-d148-4a87-8bc8-f74e19f98b86" SourceId="1" SourceUrl="http://localhost:4323/SendEmailService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SendEmailService1.xsd" MetadataType="Schema" ID="4241fad7-a466-4a20-9903-250af18b547b" SourceId="1" SourceUrl="http://localhost:4323/SendEmailService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SendEmailService.disco" MetadataType="Disco" ID="51b1a1d5-82b1-4fcd-9814-ee2983385b41" SourceId="1" SourceUrl="http://localhost:4323/SendEmailService.svc?disco" />
+    <MetadataFile FileName="SendEmailService.wsdl" MetadataType="Wsdl" ID="bf792336-88b6-4ed3-af08-58eb58ad1330" SourceId="1" SourceUrl="http://localhost:4375/SendEmailService.svc?wsdl" />
+    <MetadataFile FileName="SendEmailService.disco" MetadataType="Disco" ID="e2991e0d-47ec-4092-86dd-2abe36ce58b5" SourceId="1" SourceUrl="http://localhost:4375/SendEmailService.svc?disco" />
+    <MetadataFile FileName="SendEmailService.xsd" MetadataType="Schema" ID="2a62734f-56be-4c18-986e-6dc33479d765" SourceId="1" SourceUrl="http://localhost:4375/SendEmailService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SendEmailService1.xsd" MetadataType="Schema" ID="4da83f3d-5d79-4c68-bb7d-c47cbaccdddf" SourceId="1" SourceUrl="http://localhost:4375/SendEmailService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
