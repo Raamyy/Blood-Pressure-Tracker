@@ -12,13 +12,13 @@
     <div class="navbar navbar-expand-sm sticky-top navbar-dark" style="margin-top:-50px; background-color: #e8175d">
         <div class="container">
             <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 @Html.ActionLink("Blood Pressure Tracker", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarColor01" style="margin-left: 60%">
+            <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
