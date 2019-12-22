@@ -84,11 +84,20 @@ namespace Blood_Pressure_Tracker.Controllers
             DietPlanRefrence.DietPlanClient serviceDietPlanClient =  new DietPlanClient();
             if (applicationUser.PressureMeasures.Count() != 0)
             {
-                PressureMeasure measure = applicationUser.PressureMeasures.Last();
-                var dictionary = serviceDietPlanClient.GetPreferDietPlan((uint)measure.Systole, (uint)measure.Diastole);
-                showUserDietPlanViewModel.Dictionary = dictionary;
-                showUserDietPlanViewModel.bloodPressureCategory =
-                    serviceDietPlanClient.GetBloodPressureType((uint) measure.Systole, (uint) measure.Diastole);
+                try
+                {
+                    PressureMeasure measure = applicationUser.PressureMeasures.Last();
+                    var dictionary =
+                        serviceDietPlanClient.GetPreferDietPlan((uint) measure.Systole, (uint) measure.Diastole);
+                    showUserDietPlanViewModel.Dictionary = dictionary;
+                    showUserDietPlanViewModel.bloodPressureCategory =
+                        serviceDietPlanClient.GetBloodPressureType((uint) measure.Systole, (uint) measure.Diastole);
+                }
+                catch
+                {
+                    showUserDietPlanViewModel.Dictionary = new Dictionary<string, string>();
+                    showUserDietPlanViewModel.bloodPressureCategory = "Invalid";
+                }
             }
             else
             {
